@@ -18,5 +18,11 @@ describe('WordCounter', function() {
       var textArray = wordCounter.createArray();
       expect(wordCounter.countWords(textArray)).toEqual({"testing": 1, "one": 3, "two": 2});
     });
+
+    it('converts words and counts to array', function() {
+      var textArray = wordCounter.createArray();
+      var countedWordsObj = wordCounter.countWords(textArray);
+      expect(wordCounter.convertCountedToArray(countedWordsObj)).toEqual( [ [ 'testing', 1 ], [ 'one', 3 ], [ 'two', 2 ] ]);
+    });
   });
 });
