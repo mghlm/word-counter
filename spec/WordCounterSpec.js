@@ -2,11 +2,16 @@ describe('WordCounter', function() {
   var wordCounter;
 
   beforeEach(function() {
-    wordCounter = new WordCounter();
+    wordCounter = new WordCounter("testing one two one two one");
   });
 
   it('takes a file as argument', function() {
-    var testWordCounter = new WordCounter("testing one two one two one");
-    expect(testWordCounter.text).toEqual("testing one two one two one");
+    expect(wordCounter.text).toEqual("testing one two one two one");
+  });
+
+  describe('Text', function() {
+    it('is split into array', function() {
+      expect(wordCounter.createArray()).toEqual(["testing", "one", "two", "one", "two", "one"]);
+    });
   });
 });
