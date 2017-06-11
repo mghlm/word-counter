@@ -24,3 +24,11 @@ WordCounter.prototype.convertCountedToArray = function (object) {
 	}
 	return array;
 };
+
+WordCounter.prototype.sortArray = function (array) {
+  sortedArray = array.sort(function(a, b) {
+			return a[1] - b[1];
+		})
+
+	return sortedArray.reverse();
+};

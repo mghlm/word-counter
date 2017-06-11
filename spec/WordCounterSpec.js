@@ -22,7 +22,14 @@ describe('WordCounter', function() {
     it('converts words and counts to array', function() {
       var textArray = wordCounter.createArray();
       var countedWordsObj = wordCounter.countWords(textArray);
-      expect(wordCounter.convertCountedToArray(countedWordsObj)).toEqual( [ [ 'testing', 1 ], [ 'one', 3 ], [ 'two', 2 ] ]);
+      expect(wordCounter.convertCountedToArray(countedWordsObj)).toEqual([ [ 'testing', 1 ], [ 'one', 3 ], [ 'two', 2 ] ]);
     });
+
+    it('sorts array in descending order of frequency', function() {
+      var textArray = wordCounter.createArray();
+      var countedWordsObj = wordCounter.countWords(textArray);
+      var countedWordsArr = wordCounter.convertCountedToArray(countedWordsObj);
+      expect(wordCounter.sortArray(countedWordsArr)).toEqual([ [ 'one', 3 ], [ 'two', 2 ], [ 'testing', 1 ] ])
+    })
   });
 });
