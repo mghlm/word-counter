@@ -13,5 +13,10 @@ describe('WordCounter', function() {
     it('is split into array', function() {
       expect(wordCounter.createArray()).toEqual(["testing", "one", "two", "one", "two", "one"]);
     });
+
+    it('counts and dedupes array', function() {
+      var textArray = wordCounter.createArray();
+      expect(wordCounter.countWords(textArray)).toEqual({"testing": 1, "one": 3, "two": 2});
+    });
   });
 });
