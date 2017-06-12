@@ -11,7 +11,6 @@ ListWords.prototype.wrapWordsInHtml = function(array) {
       htmlArray.push('<p> <b>"' + array[i][0]  + '"</b> occures <b>' + array[i][1] + "</b> times " + "</p>");
     }
   }
-
   return htmlArray;
 }
 

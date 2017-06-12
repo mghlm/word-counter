@@ -17,11 +17,9 @@ window.onload = function() {
         var listWords = new ListWords(wordArray);
 
         textArea.innerHTML = listWords.wrapWordsInHtml(wordArray).join(' ');
-        console.log(wordArray);
       }
     } else {
       alert("Please select a .txt file");
     }
   })
-
 }
