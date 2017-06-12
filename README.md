@@ -35,4 +35,4 @@ Run tests:
 
 ### Screenshot
 
-![alt](http://i.imgur.com/uxthD4y.png)
+<a href="url"><img src="http://i.imgur.com/uxthD4y.png" align="left" height="600" width="400" ></a>
