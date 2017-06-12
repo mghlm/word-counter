@@ -1,7 +1,7 @@
 window.onload = function() {
 
   var fileInput = document.getElementById('fileInput');
-  var textArea = document.getElementById('textArea')
+  var wordListArea = document.getElementById('wordListArea')
 
   fileInput.addEventListener('change', function () {
     var file = fileInput.files[0];
@@ -16,7 +16,7 @@ window.onload = function() {
         var wordArray = countWords.returnCountedWords();
         var listWords = new ListWords(wordArray);
 
-        textArea.innerHTML = listWords.wrapWordsInHtml(wordArray).join(' ');
+        wordListArea.innerHTML = listWords.wrapWordsInHtml(wordArray).join(' ');
       }
     } else {
       alert("Please select a .txt file");
