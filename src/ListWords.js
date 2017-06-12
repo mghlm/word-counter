@@ -1,4 +1,4 @@
-(function(exports){
+(function(exports) {
   var ListWords = function(wordArray) {
     this.wordArray = wordArray;
   }
@@ -7,9 +7,9 @@
     htmlArray = [];
     for (var i = 0; i < array.length; i++) {
       if (this.isPrimeNumber(array[i][1])) {
-        htmlArray.push('<p> <b id="word">' + array[i][0]  + '</b> occures <b id="prime-number">' + array[i][1] + '</b> times </p>');
+        htmlArray.push('<p> <b id="word">' + array[i][0] + '</b> occures <b id="prime-number">' + array[i][1] + '</b> times </p>');
       } else {
-        htmlArray.push('<p> <b id="word">' + array[i][0]  + '</b> occures <b id="number">' + array[i][1] + "</b> times " + "</p>");
+        htmlArray.push('<p> <b id="word">' + array[i][0] + '</b> occures <b id="number">' + array[i][1] + "</b> times " + "</p>");
       }
     }
     return htmlArray;

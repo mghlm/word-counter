@@ -3,7 +3,7 @@ window.onload = function() {
   var fileInput = document.getElementById('fileInput');
   var wordListArea = document.getElementById('wordListArea')
 
-  fileInput.addEventListener('change', function () {
+  fileInput.addEventListener('change', function() {
     var file = fileInput.files[0];
 
     if (file.type.match(/text.*/)) {
