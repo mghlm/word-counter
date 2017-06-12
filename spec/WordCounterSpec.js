@@ -37,7 +37,11 @@ describe('WordCounter', function() {
       var countedWordsObj = wordCounter.countWords(textArray);
       var countedWordsArr = wordCounter.convertCountedToArray(countedWordsObj);
       var sortedArray = wordCounter.sortArray(countedWordsArr);
-      expect(wordCounter.returnList(sortedArray)).toEqual(["one, 3", "two, 2", "testing, 1"]);
+      expect(wordCounter.convertToStrings(sortedArray)).toEqual(["one, 3", "two, 2", "testing, 1"]);
+    });
+
+    it('runs through all convertion processes and returns final array of counted strings', function() {
+      expect(wordCounter.returnCountedWords()).toEqual(["one, 3", "two, 2", "testing, 1"]);
     });
   });
 

@@ -2,7 +2,7 @@ var WordCounter = function(text) {
   this.text = text;
 }
 
-WordCounter.prototype.createArray = function (text) {
+WordCounter.prototype.createArray = function () {
   return this.text.replace(/\W+/g, ' ').toLowerCase().split(' ');
 };
 
@@ -33,14 +33,22 @@ WordCounter.prototype.sortArray = function (array) {
 	return sortedArray.reverse();
 };
 
-WordCounter.prototype.returnList = function (array) {
+WordCounter.prototype.convertToStrings = function (array) {
   stringArray = [];
-
   for (var i = 0; i < array.length; i++) {
       stringArray.push(array[i].join(', '));
   }
 
   return stringArray;
+};
+
+WordCounter.prototype.returnCountedWords = function () {
+  var textArray = this.createArray();
+  var countedWordsObj = this.countWords(textArray);
+  var countedWordsArr = this.convertCountedToArray(countedWordsObj);
+  var sortedArray = this.sortArray(countedWordsArr);
+
+  return this.convertToStrings(sortedArray);
 };
 
 _isNumberPrime = function(number) {
