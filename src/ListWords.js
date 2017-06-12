@@ -1,8 +1,8 @@
-var WordList = function(wordArray) {
+var ListWords = function(wordArray) {
   this.wordArray = wordArray;
 }
 
-WordList.prototype.printCountedWordsAsList = function(array) {
+ListWords.prototype.wrapWordsInHtml = function(array) {
   htmlArray = [];
   for (var i = 0; i < array.length; i++) {
     if (this.isPrimeNumber(array[i][1])) {
@@ -15,7 +15,7 @@ WordList.prototype.printCountedWordsAsList = function(array) {
   return htmlArray;
 }
 
-WordList.prototype.isPrimeNumber = function(number) {
+ListWords.prototype.isPrimeNumber = function(number) {
   if (number === 1) {
     return false;
   } else if (number === 2) {

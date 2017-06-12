@@ -1,12 +1,12 @@
-var WordCounter = function(text) {
+var CountWords = function(text) {
   this.text = text;
 }
 
-WordCounter.prototype.createArray = function () {
+CountWords.prototype.createArray = function () {
   return this.text.replace(/\W+/g, ' ').toLowerCase().split(' ');
 };
 
-WordCounter.prototype.countWords = function (array) {
+CountWords.prototype.countWords = function (array) {
   var counts = {};
 	array.forEach(function(word) {
 		counts[word] = (counts[word] || 0)+1;
@@ -15,7 +15,7 @@ WordCounter.prototype.countWords = function (array) {
 	return counts;
 };
 
-WordCounter.prototype.convertCountedToArray = function (object) {
+CountWords.prototype.convertCountedToArray = function (object) {
   var array = [];
 	for (var key in object) {
 		if (object.hasOwnProperty(key)) {
@@ -25,7 +25,7 @@ WordCounter.prototype.convertCountedToArray = function (object) {
 	return array;
 };
 
-WordCounter.prototype.sortArray = function (array) {
+CountWords.prototype.sortArray = function (array) {
   sortedArray = array.sort(function(a, b) {
 			return a[1] - b[1];
 		})
@@ -33,7 +33,7 @@ WordCounter.prototype.sortArray = function (array) {
 	return sortedArray.reverse();
 };
 
-WordCounter.prototype.returnCountedWords = function () {
+CountWords.prototype.returnCountedWords = function () {
   var textArray = this.createArray();
   var countedWordsObj = this.countWords(textArray);
   var countedWordsArr = this.convertCountedToArray(countedWordsObj);
