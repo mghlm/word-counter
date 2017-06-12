@@ -32,16 +32,16 @@ describe('WordCounter', function() {
       expect(wordCounter.sortArray(countedWordsArr)).toEqual([ [ 'one', 3 ], [ 'two', 2 ], [ 'testing', 1 ] ])
     });
 
-    it('returns a list of words and their frequency', function() {
-      var textArray = wordCounter.createArray();
-      var countedWordsObj = wordCounter.countWords(textArray);
-      var countedWordsArr = wordCounter.convertCountedToArray(countedWordsObj);
-      var sortedArray = wordCounter.sortArray(countedWordsArr);
-      expect(wordCounter.convertToStrings(sortedArray)).toEqual(["one, 3", "two, 2", "testing, 1"]);
-    });
+    // it('returns a list of words and their frequency', function() {
+    //   var textArray = wordCounter.createArray();
+    //   var countedWordsObj = wordCounter.countWords(textArray);
+    //   var countedWordsArr = wordCounter.convertCountedToArray(countedWordsObj);
+    //   var sortedArray = wordCounter.sortArray(countedWordsArr);
+    //   expect(wordCounter.convertToStrings(sortedArray)).toEqual(["one, 3", "two, 2", "testing, 1"]);
+    // });
 
-    it('runs through all convertion processes and returns final array of counted strings', function() {
-      expect(wordCounter.returnCountedWords()).toEqual(["one, 3", "two, 2", "testing, 1"]);
+    it('runs through all convertion processes and returns final 2d array of counted words', function() {
+      expect(wordCounter.returnCountedWords()).toEqual([ [ 'one', 3 ], [ 'two', 2 ], [ 'testing', 1 ] ]);
     });
   });
 
