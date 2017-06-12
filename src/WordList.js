@@ -2,17 +2,17 @@ var WordList = function(wordArray) {
   this.wordArray = wordArray;
 }
 
-WordList.prototype.printCountedWordsAsList = function(divId, array) {
+WordList.prototype.printCountedWordsAsList = function(array) {
   htmlArray = [];
   for (var i = 0; i < array.length; i++) {
-    if (isPrimeNumber(array[i][1])) {
+    if (this.isPrimeNumber(array[i][1])) {
       htmlArray.push('<p> <b>"' + array[i][0]  + '"</b> occures <b>' + array[i][1] + "</b> times " + " --> <b> prime </b>  </p>");
     } else {
       htmlArray.push('<p> <b>"' + array[i][0]  + '"</b> occures <b>' + array[i][1] + "</b> times " + "</p>");
     }
   }
 
-  divId.innerHTML = htmlArray.join('');
+  return htmlArray;
 }
 
 WordList.prototype.isPrimeNumber = function(number) {

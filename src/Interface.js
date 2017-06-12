@@ -16,7 +16,7 @@ window.onload = function() {
         var wordArray = wordCounter.returnCountedWords();
         var wordList = new WordList(wordArray);
 
-        printCountedWordsAsList(textArea, wordArray);
+        textArea.innerHTML = wordList.printCountedWordsAsList(wordArray).join(' ');
         console.log(wordArray);
       }
     } else {
