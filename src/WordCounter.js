@@ -33,15 +33,6 @@ WordCounter.prototype.sortArray = function (array) {
 	return sortedArray.reverse();
 };
 
-// WordCounter.prototype.convertToStrings = function (array) {
-//   stringArray = [];
-//   for (var i = 0; i < array.length; i++) {
-//       stringArray.push(array[i].join(', '));
-//   }
-//
-//   return stringArray;
-// };
-
 WordCounter.prototype.returnCountedWords = function () {
   var textArray = this.createArray();
   var countedWordsObj = this.countWords(textArray);

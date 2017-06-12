@@ -45,13 +45,4 @@ describe('WordCounter', function() {
   //     expect(printCountedWordsAsList(testArray)).toEqual(["<p> <b> word </b> occures 3 times </p>"]);
   //   });
   // })
-
-  describe('Number', function() {
-    it('returns true if passed number is a prime, otherwise it returns false', function() {
-      expect(_isNumberPrime(1)).toBeFalsy();
-      expect(_isNumberPrime(2)).toBeTruthy();
-      expect(_isNumberPrime(3)).toBeTruthy();
-      expect(_isNumberPrime(4)).toBeFalsy();
-    });
-  });
 });
