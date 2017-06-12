@@ -1,4 +1,4 @@
-windows.onload = function() {
+window.onload = function() {
 
   var fileInput = document.getElementById('fileInput');
 
@@ -8,10 +8,12 @@ windows.onload = function() {
     if (file.type.match(/text.*/)) {
       var fileReader = new FileReader();
 
+
       fileReader.readAsText(file);
 
       fileReader.onload = function() {
-
+        var wordCounter = new WordCounter(fileReader.result);
+        console.log(wordCounter.returnCountedWords());
       }
     }
   })
