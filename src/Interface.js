@@ -14,12 +14,23 @@ window.onload = function() {
 
       fileReader.onload = function() {
         var wordCounter = new WordCounter(fileReader.result);
-        textArea.innerText = wordCounter.returnCountedWords();
-        console.log(wordCounter.returnCountedWords());
+        var wordArray = wordCounter.returnCountedWords();
+
+        // textArea.innerHTML = wordCounter.returnCountedWords();
+        printCountedWordsAsList(textArea, wordArray);
+        console.log(wordArray);
       }
     }
   })
 
+  printCountedWordsAsList = function(divId, array) {
+    htmlArray = [];
+    for (var i = 0; i < array.length; i++) {
+      htmlArray.push("<p> <b>" + array[i][0]  + "</b> occures " + array[i][1] + " times " + "</p>");
+    }
+
+    divId.innerHTML = htmlArray.join('');
+  }
 
 
 }
