@@ -4,7 +4,9 @@ Word-Counter outputs the individual words of an uploaded text file, and how many
 
 ### Approach taken
 
-The app is built in vanilla javascript and tested with Jasmine.
+* **TDD** - the app is built using a test driven approach and has high test-coverage.
+
+* **Vanilla Javascript** - the app is built in vanilla javascript with no use of frameworks or libraries.
 
 ### Instructions
 
