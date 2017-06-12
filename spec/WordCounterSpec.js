@@ -31,6 +31,14 @@ describe('WordCounter', function() {
       var countedWordsArr = wordCounter.convertCountedToArray(countedWordsObj);
       expect(wordCounter.sortArray(countedWordsArr)).toEqual([ [ 'one', 3 ], [ 'two', 2 ], [ 'testing', 1 ] ])
     });
+
+    it('returns a list of words and their frequency', function() {
+      var textArray = wordCounter.createArray();
+      var countedWordsObj = wordCounter.countWords(textArray);
+      var countedWordsArr = wordCounter.convertCountedToArray(countedWordsObj);
+      var sortedArray = wordCounter.sortArray(countedWordsArr);
+      expect(wordCounter.returnList(sortedArray)).toEqual(["one, 3", "two, 2", "testing, 1"]);
+    });
   });
 
   describe('Number', function() {
