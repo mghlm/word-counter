@@ -9,7 +9,7 @@ describe('ListWords', function() {
   describe('Text', function() {
     it('is wrapped in html for list-view', function() {
       var testArray = [["word", 3], ["another", 2]]
-      expect(listWords.wrapWordsInHtml(testArray)).toEqual([ '<p> <b>"word"</b> occures <b>3</b> times  --> <b> prime </b>  </p>', '<p> <b>"another"</b> occures <b>2</b> times  --> <b> prime </b>  </p>' ]);
+      expect(listWords.wrapWordsInHtml(testArray)).toEqual([ '<p> <b id="word">word</b> occures <b id="prime-number">3</b> times </p>', '<p> <b id="word">another</b> occures <b id="prime-number">2</b> times </p>' ]);
     });
   });
 
